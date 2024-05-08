@@ -38,7 +38,7 @@ export class UserListComponent implements OnInit {
     if (newHeight <= 850) {
       this.limit = 8;
     } else if (newHeight >= 850) {
-      this.limit = 9;
+      this.limit = 8;
     }
     this.getCurrentUsers();
   }
