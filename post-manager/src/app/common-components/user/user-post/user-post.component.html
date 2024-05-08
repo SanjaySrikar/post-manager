@@ -27,14 +27,14 @@
         <span class="text-sm ml-2">
           <img
             src="/assets/edit.png"
-            class="cursor-pointer"
+            class="cursor-pointer object-contain invert"
             (click)="editPost()"
           />
         </span>
         <span class="text-sm ml-2">
           <img
             src="/assets/close.png"
-            class="cursor-pointer"
+            class="cursor-pointer object-contain invert"
             (click)="deletePost(post.userId ? post.userId : '', post.id ? post.id : '')"
           />
         </span>
