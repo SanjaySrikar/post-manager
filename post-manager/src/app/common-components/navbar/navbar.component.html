@@ -1,0 +1,22 @@
+<header
+  class="bg-matte font-bold font-poppins flex items-center justify-between px-4 py-4 bg-blend-hue backdrop-blur-xl sticky top-0 text-white z-50"
+>
+  <div class="flex space-x-4 items-center">
+    <!-- <img class="w-10 invert" src="/assets/idea.png" alt="could not fetch" /> -->
+    <h1 class="text-5xl">Post Manager</h1>
+  </div>
+
+  <nav class="flex justify-end ml-auto">
+    <ul class="flex flex-row mr-5">
+      <li>
+        <a
+          [routerLink]="'/dashboard'"
+          routerLinkActive="text-gray text-lg hover:text-gray"
+          >Dashboard</a
+        >
+      </li>
+    </ul>
+  </nav>
+  <button>Logout</button>
+</header>
+<router-outlet></router-outlet>

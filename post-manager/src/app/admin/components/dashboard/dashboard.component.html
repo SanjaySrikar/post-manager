@@ -1,0 +1,11 @@
+<div class="min-h-screen w-full flex flex-grow gap-5 mt-10 bg-mat ">
+  <div class="flex-shrink-0 w-[350px] mx-2">
+    <app-user-list (showPost)="showUserPost($event)"></app-user-list>
+  </div>
+  <div class="flex-grow w-2/3 ">
+    <app-post-feed [user_id]="user_id" (postToEdit)="sendPostToEdit($event)"></app-post-feed>
+  </div>
+  <div class="flex-shrink-0 w-1/3 mr-2">
+    <app-create-post [user_id]="user_id" [postToEdit]="postToEdit" [editMode]="postToEdit ? true : false"></app-create-post>
+  </div>
+</div>

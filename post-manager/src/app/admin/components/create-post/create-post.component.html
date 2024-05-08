@@ -1,0 +1,115 @@
+<div class="bg-matte text-white min-h-screen h-full p-2 font-poppins">
+  <h1 class="text-4xl font-bold">Create A Post</h1>
+  <!--TEXT EDITOR-->
+  <div class="rounded-xl mx-auto h-[460px] mt-10 px-2 py-2 space-y-5">
+    <input
+      class="px-2 py-1.5 w-full border-2 bg-matte placeholder:text-white rounded-lg focus:outline-none"
+      type="text"
+      name="title"
+      [(ngModel)]="post.Title"
+      [ngModelOptions]="{ standalone: true }"
+      placeholder="Title"
+    />
+    <div class="w-full mb-4 border-2 border-white rounded-lg">
+      <div class="flex items-center justify-between px-3 py-2 border-b">
+        <div class="flex flex-wrap items-center sm:divide-x">
+          <div class="flex items-center space-x-1 sm:pr-4">
+            <button type="button" class="p-2 cursor-pointer rounded-full">
+              <svg
+                aria-hidden="true"
+                class="w-5 h-5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M8 4a3 3 0 00-3 3v4a5 5 0 0010 0V7a1 1 0 112 0v4a7 7 0 11-14 0V7a5 5 0 0110 0v4a3 3 0 11-6 0V7a1 1 0 012 0v4a1 1 0 102 0V7a3 3 0 00-3-3z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </button>
+            <button
+              type="button"
+              class="p-2 text-gray-500 cursor-pointer rounded-full"
+            >
+              <svg
+                aria-hidden="true"
+                class="w-5 h-5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+              <span class="sr-only">Upload image</span>
+            </button>
+          </div>
+          <div class="flex flex-wrap items-center space-x-1 sm:pl-4">
+            <button
+              type="button"
+              class="p-2 text-gray-500 cursor-pointer rounded-full"
+            >
+              <svg
+                aria-hidden="true"
+                class="w-5 h-5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a1 1 0 100-2 1 1 0 000 2zm7-1a1 1 0 11-2 0 1 1 0 012 0zm-.464 5.535a1 1 0 10-1.415-1.414 3 3 0 01-4.242 0 1 1 0 00-1.415 1.414 5 5 0 007.072 0z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+              <span class="sr-only">Add emoji</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="px-4 py-2 rounded-b-lg w-full h-[340px] text-jet-blue">
+        <textarea
+          id="editor"
+          rows="8"
+          [(ngModel)]="post.content"
+          [ngModelOptions]="{ standalone: true }"
+          class="focus:outline-none block w-full h-[320px] bg-matte placeholder:text-white px-0 text-sm text-white focus:ring-0"
+          placeholder="Write a Post..."
+          required
+        ></textarea>
+      </div>
+    </div>
+  </div>
+  <!--ACTIONS / BUTTONS-->
+  <div class="mx-auto h-fit border-0 rounded-xl px-2 py-2 flex flex-col">
+    <div class="actions flex justify-end space-x-2">
+      <button
+        type="submit"
+        class="border-0 mr-auto rounded-full px-3 py-0.5 hover:text-gray cursor-pointer"
+        (click)="noEdit()"
+        *ngIf="editMode === true"
+      >
+        Create!
+      </button>
+      <button
+        type="submit"
+        class="border-0 rounded-full px-3 py-0.5 hover:text-gray cursor-pointer"
+        (click)="clearPost()"
+      >
+        Clear
+      </button>
+      <button
+        type="submit"
+        class="border-0 rounded-full px-3 py-0.5 hover:text-gray cursor-pointer"
+        (click)="createPost()"
+      >
+        Post
+      </button>
+    </div>
+  </div>
+</div>

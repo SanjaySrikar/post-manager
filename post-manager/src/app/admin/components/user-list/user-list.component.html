@@ -1,0 +1,60 @@
+<div
+  *ngIf="usersInPage && usersInPage.length > 0; else noUsers"
+  class="p-2 font-poppins bg-matte text-white h-full"
+>
+  <h3 class="text-4xl font-bold">Users</h3>
+  <div *ngFor="let user of usersInPage" class="h-fit">
+    <app-user-profile
+      [user]="user"
+      (click)="showPosts(user.id)"
+    ></app-user-profile>
+  </div>
+  <div class="absolute bottom-5 left-28">
+    <div class="flex items-center space-x-3">
+      <div
+        (click)="goToPreviousPage()"
+        class="flex items-center justify-center cursor-pointer px-3 h-8 text-sm font-medium text-gray-500 rounded-lg "
+      >
+        <svg
+          class="w-3.5 h-3.5 me-2 rtl:rotate-180"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 14 10"
+        >
+          <path
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M13 5H1m0 0 4 4M1 5l4-4"
+          />
+        </svg>
+      </div>
+      <h3 class>{{ currentPage }}</h3>
+      <div
+        (click)="goToNextPage()"
+        class="flex items-center justify-center cursor-pointer px-3 h-8 text-sm font-medium  rounded-lg   "
+      >
+        <svg
+          class="w-3.5 h-3.5 ms-2 rtl:rotate-180"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 14 10"
+        >
+          <path
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M1 5h12m0 0L9 1m4 4L9 9"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+<ng-template #noUsers>
+  <p class="font-poppins p-2 bg-matte text-white h-full">No Users found.</p>
+</ng-template>

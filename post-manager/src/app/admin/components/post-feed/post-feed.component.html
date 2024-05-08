@@ -1,0 +1,21 @@
+<div
+  *ngIf="posts && posts.length > 0; else noPosts"
+  class="font-poppins p-2 bg-matte text-white"
+>
+  <h3 class="text-4xl font-bold ml-7">Recent Posts</h3>
+  <ul>
+    <li *ngFor="let post of posts">
+      <app-user-post
+        [post]="post"
+        (postToEdit)="editPost($event, post)"
+      ></app-user-post>
+    </li>
+  </ul>
+</div>
+
+<ng-template #noPosts>
+  <div class="bg-matte text-white h-full">
+    <h3 class="text-4xl font-bold font-poppins p-2 ml-7">Recent Posts</h3>
+    <p class="p-2 font-poppins ml-7">No recent posts found.</p>
+  </div>
+</ng-template>
