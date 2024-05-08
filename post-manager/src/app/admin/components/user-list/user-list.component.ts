@@ -27,7 +27,7 @@ export class UserListComponent implements OnInit {
     if (windowHeight <= 850) {
       this.limit = 8;
     } else if (windowHeight >= 850) {
-      this.limit = 13;
+      this.limit = 8;
     }
   }
 
