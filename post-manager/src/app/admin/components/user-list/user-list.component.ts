@@ -25,7 +25,7 @@ export class UserListComponent implements OnInit {
   constructor(private _userService: UserService) {
     const windowHeight = window.innerHeight;
     if (windowHeight <= 850) {
-      this.limit = 8;
+      this.limit = 5;
     } else if (windowHeight >= 850) {
       this.limit = 8;
     }
@@ -38,7 +38,7 @@ export class UserListComponent implements OnInit {
     if (newHeight <= 850) {
       this.limit = 8;
     } else if (newHeight >= 850) {
-      this.limit = 13;
+      this.limit = 9;
     }
     this.getCurrentUsers();
   }
@@ -61,7 +61,6 @@ export class UserListComponent implements OnInit {
     }
   }
   getCurrentUsers() {
-    console.log('changing');
     this.usersInPage = this.users.slice(
       this.limit * this.currentPage,
       this.limit * this.currentPage + this.limit
